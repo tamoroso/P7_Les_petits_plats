@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&family=Lato:wght@400;700&family=Roboto&display=swap");
+
+:root {
+  --font-title: "DM Sans", sans-serif;
+  --font-primary: "Lato", sans-serif;
+  --font-secondary: "Roboto", sans-serif;
+}
+
+/* Reset */
+* {
+  font-family: var(--font-primary);
+  box-sizing: border-box;
+}
+
+/* Global */
+h1 {
+  font-family: var(--font-title);
+}

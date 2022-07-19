@@ -4,11 +4,32 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/style/style.css" />
     <title>Les petits plats</title>
   </head>
   <body>
-    <header></header>
-    <main></main>
+    <header>
+      <img src="./assets/logo.svg" alt="Les petits plats logo" />
+      <h1>Les petits plats</h1>
+    </header>
+    <main>
+      <form>
+        <input type="search" name="searchBar" id="searchBar" />
+        <button type="submit">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </form>
+      <section class="recipes_section"></section>
+    </main>
     <footer></footer>
+    <script src="./scripts/factories/recipeFactory.js"></script>
+    <script src="./scripts/index.js"></script>
   </body>
 </html>
