@@ -123,7 +123,7 @@ const getUtensilsItemsDOM = (recipes) => {
   return dropDownItems;
 };
 
-const handleSearch = (array, searchInput) => {
+const handleSearchFilter = (array, searchInput) => {
   return array.filter((value) => {
     const searchString = searchInput.toLowerCase();
     return value.toString().toLowerCase().includes(searchString);
@@ -155,7 +155,7 @@ const ADVANCED_SEARCH = {
           return;
       }
     };
-    const filteredArray = handleSearch(getData(searchType), value);
+    const filteredArray = handleSearchFilter(getData(searchType), value);
     const dropDownItems = generateDOMList(filteredArray);
     //Remove all child from parent to append dropDownItems
     const dropDownContent = document.querySelector(
