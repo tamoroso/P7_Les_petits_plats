@@ -21,14 +21,56 @@
     </header>
     <main>
       <form>
-        <input type="search" name="searchBar" id="searchBar" />
+        <input type="search" name="search" id="search" class="search-bar" />
         <button type="submit">
-          <i class="fa-solid fa-magnifying-glass"></i>
+          <i class="fa-solid fa-magnifying-glass fa-2xl"></i>
         </button>
       </form>
+      <section class="advanced-search">
+        <ul class="filter-list"></ul>
+        <ul class="dropdown-list">
+          <div class="dropdown dropdown--ingredient">
+            <div class="dropdown-btn dropdown-btn--ingredient">
+              <div class="dropdown-header">
+                <label for="ingredient">Ingrédients</label>
+                <input type="text" placeholder="Ingredient" id="ingredient" />
+                <i class="fa-solid fa-angle-down close-btn"></i>
+              </div>
+              <div class="dropdown-wrapper">
+                <ul class="dropdown-content dropdown-content--ingredient"></ul>
+              </div>
+            </div>
+          </div>
+          <div class="dropdown dropdown--device">
+            <div class="dropdown-btn dropdown-btn--device">
+              <div class="dropdown-header">
+                <label for="device">Appareils</label>
+                <input type="text" placeholder="Appareils" id="device" />
+                <i class="fa-solid fa-angle-down close-btn"></i>
+              </div>
+              <div class="dropdown-wrapper">
+                <ul class="dropdown-content dropdown-content--device"></ul>
+              </div>
+            </div>
+          </div>
+          <div class="dropdown dropdown--utensil">
+            <div class="dropdown-btn dropdown-btn--utensil">
+              <div class="dropdown-header">
+                <label for="utensil">Ustensiles</label>
+                <input type="text" placeholder="Ustensiles" id="utensil" />
+                <i class="fa-solid fa-angle-down close-btn"></i>
+              </div>
+              <div class="dropdown-wrapper">
+                <ul class="dropdown-content dropdown-content--utensil"></ul>
+              </div>
+            </div>
+          </div>
+        </ul>
+      </section>
       <section class="recipes_section"></section>
     </main>
     <footer></footer>
+    <script src="./scripts/components/searchableDropDown.js"></script>
     <script src="./scripts/factories/recipeFactory.js"></script>
     <script src="./scripts/index.js"></script>
   </body>

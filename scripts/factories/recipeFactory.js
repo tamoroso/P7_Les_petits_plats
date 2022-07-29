@@ -11,7 +11,7 @@ const recipeFactory = (recipe) => {
                 <h2>${name}</h2>
                 <span>
                     <i class="fa-regular fa-clock"></i>
-                    <p>${time}</p>
+                    <p>${time} min</p>
                 </span>
             </div>
             <div class="recipe_details-body">
@@ -20,7 +20,7 @@ const recipeFactory = (recipe) => {
                       .map(
                         (el) =>
                           `<li>
-                        ${el.ingredient} 
+                        <b>${el.ingredient}</b>
                         ${el.quantity ? `: ${el.quantity}` : ""}
                         ${el.unit ? el.unit : ""}
                         </li>`

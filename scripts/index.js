@@ -20,17 +20,39 @@ const fetchRecipesData = async () => {
 //function to generate html
 const displayData = (recipes) => {
   const recipesSection = document.querySelector(".recipes_section");
+  const ingredientDropDownContent = document.querySelector(
+    ".dropdown-content--ingredient"
+  );
+  const deviceDropDownContent = document.querySelector(
+    ".dropdown-content--device"
+  );
+  const utensilsDropDownContent = document.querySelector(
+    ".dropdown-content--utensil"
+  );
 
   recipes.forEach((recipe) => {
     const recipeModel = recipeFactory(recipe);
     const recipeCardDOM = recipeModel.getRecipeCardDOM();
     recipesSection.appendChild(recipeCardDOM);
   });
+
+  const ingredientDropDownDOM = getIngredientItemsDOM(recipes);
+  const deviceDropDownDOM = getDeviceItemsDOM(recipes);
+  const utensilsDropDownDOM = getUtensilsItemsDOM(recipes);
+
+  ingredientDropDownDOM.forEach((item) =>
+    ingredientDropDownContent.appendChild(item)
+  );
+  deviceDropDownDOM.forEach((item) => deviceDropDownContent.appendChild(item));
+  utensilsDropDownDOM.forEach((item) =>
+    utensilsDropDownContent.appendChild(item)
+  );
 };
 
 //function to initialize html page
 const init = async () => {
   const { recipes } = await fetchRecipesData();
+  window.localStorage.setItem("recipes", JSON.stringify(recipes));
   displayData(recipes);
   console.log(recipes);
 };
