@@ -1,4 +1,5 @@
 const recipesData = JSON.parse(window.localStorage.getItem("recipes"));
+console.log(recipesData);
 
 const handleSearch = (recipes, searchParams) => {
   let res = [];
@@ -38,17 +39,6 @@ const handleSearch = (recipes, searchParams) => {
 };
 
 const searchBar = document.querySelector("#search");
-
-const stringToArray = (string) => {
-  if (string.trim().length === 0) {
-    return [];
-  }
-  let array = string.split(" ");
-  for (let i = 0; i < array.length; i++) {
-    array[i] = array[i].toString().toLowerCase();
-  }
-  return array;
-};
 
 searchBar.addEventListener("input", (event) => {
   const searchParams = event.target.value
