@@ -26,10 +26,10 @@
           <i class="fa-solid fa-magnifying-glass fa-2xl"></i>
         </button>
       </form>
-      <section class="advanced-search">
+      <div class="advanced-search">
         <ul class="filter-list"></ul>
         <ul class="dropdown-list">
-          <div class="dropdown dropdown--ingredient">
+          <li class="dropdown dropdown--ingredient">
             <div class="dropdown-btn dropdown-btn--ingredient">
               <div class="dropdown-header">
                 <label for="ingredient">Ingrédients</label>
@@ -40,8 +40,8 @@
                 <ul class="dropdown-content dropdown-content--ingredient"></ul>
               </div>
             </div>
-          </div>
-          <div class="dropdown dropdown--device">
+          </li>
+          <li class="dropdown dropdown--device">
             <div class="dropdown-btn dropdown-btn--device">
               <div class="dropdown-header">
                 <label for="device">Appareils</label>
@@ -52,8 +52,8 @@
                 <ul class="dropdown-content dropdown-content--device"></ul>
               </div>
             </div>
-          </div>
-          <div class="dropdown dropdown--utensil">
+          </li>
+          <li class="dropdown dropdown--utensil">
             <div class="dropdown-btn dropdown-btn--utensil">
               <div class="dropdown-header">
                 <label for="utensil">Ustensiles</label>
@@ -64,15 +64,16 @@
                 <ul class="dropdown-content dropdown-content--utensil"></ul>
               </div>
             </div>
-          </div>
+          </li>
         </ul>
-      </section>
-      <section class="recipes_section"></section>
+      </div>
+      <div class="recipes_section"></div>
     </main>
     <footer></footer>
+    <script src="./scripts/utils/utils.js"></script>
+    <script src="./scripts/index.js"></script>
     <script src="./scripts/components/searchBar.js"></script>
     <script src="./scripts/components/searchableDropDown.js"></script>
     <script src="./scripts/factories/recipeFactory.js"></script>
-    <script src="./scripts/index.js"></script>
   </body>
 </html>

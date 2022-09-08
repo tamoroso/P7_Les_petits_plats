@@ -63,6 +63,7 @@ form {
   width: 100%;
   position: relative;
   padding: 0 20px;
+  margin-bottom: 1rem;
 }
 
 .search-bar {
@@ -71,7 +72,6 @@ form {
   border: none;
   background-color: #e7e7e7;
   border-radius: 5px;
-  margin-bottom: 1rem;
 }
 
 button {
@@ -87,11 +87,14 @@ button {
 
 .advanced-search {
   padding: 0 20px;
+  height: 150px;
 }
 
 .filter-list {
   display: flex;
   gap: 20px;
+  max-width: 100%;
+  flex-flow: wrap;
 }
 
 .dropdown-list {
@@ -129,8 +132,10 @@ button {
 }
 
 .dropdown {
+  padding: 0;
   width: fit-content;
   margin: 1rem 0;
+  list-style: none;
 }
 
 .dropdown-btn {
@@ -138,10 +143,11 @@ button {
   padding: 1.5rem;
   border-radius: 10px;
   min-width: 180px;
-  /* cursor: pointer; */
+  cursor: pointer;
 }
 
 .dropdown label {
+  font-size: 0.8rem;
   display: inline-block;
   cursor: pointer;
 }
@@ -227,6 +233,10 @@ button {
   justify-content: center;
 }
 
+.no_val_search {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
 /* Recipe card */
 article {
   max-width: calc(100% * 1 / 3 - var(--card-gap));
@@ -260,7 +270,7 @@ article {
   padding-right: 0.5rem;
 }
 
-.recipe_details-header span p {
+.recipe_details-header span span {
   font-size: 0.9rem;
 }
 

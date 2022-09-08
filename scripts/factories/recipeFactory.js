@@ -11,7 +11,7 @@ const recipeFactory = (recipe) => {
                 <h2>${name}</h2>
                 <span>
                     <i class="fa-regular fa-clock"></i>
-                    <p>${time} min</p>
+                    <span>${time} min</span>
                 </span>
             </div>
             <div class="recipe_details-body">
