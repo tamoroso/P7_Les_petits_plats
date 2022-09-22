@@ -1,3 +1,9 @@
+//Retrieving the current Url
+getCurrentUrl = () => {
+  const URL = window.location.href;
+  return URL;
+};
+
 //function to get data
 const fetchRecipesData = async () => {
   let headers = new Headers();
@@ -7,7 +13,7 @@ const fetchRecipesData = async () => {
     mode: "cors",
     cache: "default",
   };
-  let request = new Request("http://localhost:5500/data/recipes.json", init);
+  let request = new Request(`${getCurrentUrl()}data/recipes.json`, init);
 
   try {
     let res = await fetch(request, init);
