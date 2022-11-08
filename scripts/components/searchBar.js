@@ -3,32 +3,27 @@ console.log(recipesData);
 
 const handleSearch = (recipes, searchParams) => {
   let res = [];
-  if (
-    (searchParams.length === 1 && searchParams[0].length < 3) ||
-    searchParams.length <= 0
-  ) {
+  if (searchParams.every((param) => param.length < 3)) {
     return recipes;
   } else {
-    for (let param = 0; param < searchParams.length; param++) {
-      for (let i = 0; i < recipes.length; i++) {
-        const recipeName = recipes[i].name;
-        const ingredientList = getIngredientList(recipes[i].ingredients);
-        const recipeDescription = recipes[i].description;
+    searchParams.splice(
+      searchParams.findIndex((param) => param.length < 3),
+      1
+    );
+    for (let i = 0; i < searchParams.length; i++) {
+      for (let j = 0; j < recipes.length; j++) {
+        const recipeName = recipes[j].name;
+        const ingredientList = getIngredientList(recipes[j].ingredients);
+        const recipeDescription = recipes[j].description;
         const searchableProps = [
           recipeName,
           ...ingredientList,
           recipeDescription,
         ];
-        for (
-          let propIndex = 0;
-          propIndex < searchableProps.length;
-          propIndex++
-        ) {
-          const currentProp = normalizeString(
-            searchableProps[propIndex].toLowerCase()
-          );
-          if (currentProp.includes(searchParams[param])) {
-            res.push(recipes[i]);
+        for (let k = 0; k < searchableProps.length; k++) {
+          const currentProp = normalizeString(searchableProps[k].toLowerCase());
+          if (currentProp.includes(searchParams[i])) {
+            res.push(recipes[j]);
             break;
           }
         }

@@ -102,9 +102,10 @@ const updateDOMContent = () => {
  * Normalize string by removing accent and trailing punctuation
  */
 const normalizeString = (inputString) => {
-  if (typeof inputString && inputString.length) {
+  if (typeof inputString === "string" && inputString.length) {
     const punctuationRegex = /[!"#$%&\'()*+,-./:;<=>?@\[\\\]^_`{|}~]/gm;
     const unpunctuatedString = inputString.replace(punctuationRegex, "");
     return unpunctuatedString.normalize("NFD").replace(/\p{Diacritic}/gu, "");
   }
+  return inputString;
 };
