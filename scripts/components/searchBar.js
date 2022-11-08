@@ -1,11 +1,12 @@
 const recipesData = JSON.parse(window.localStorage.getItem("recipes"));
 
 const handleSearch = (recipes, searchParams) => {
+  searchParams.splice(
+    searchParams.findIndex((param) => param.length <= 3),
+    1
+  );
   return recipes.reduce((acc, recipe) => {
-    if (
-      (searchParams.length === 1 && searchParams[0].length < 3) ||
-      searchParams.length <= 0
-    ) {
+    if (searchParams.every((param) => param.length < 3)) {
       acc.push(recipe);
     } else {
       const ingredientList = getIngredientList(recipe.ingredients);
