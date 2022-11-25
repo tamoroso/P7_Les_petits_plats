@@ -1,10 +1,6 @@
 const recipesData = JSON.parse(window.localStorage.getItem("recipes"));
 
 const handleSearch = (recipes, searchParams) => {
-  searchParams.splice(
-    searchParams.findIndex((param) => param.length <= 3),
-    1
-  );
   return recipes.reduce((acc, recipe) => {
     if (searchParams.every((param) => param.length < 3)) {
       acc.push(recipe);
