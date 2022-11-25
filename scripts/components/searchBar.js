@@ -3,13 +3,9 @@ console.log(recipesData);
 
 const handleSearch = (recipes, searchParams) => {
   let res = [];
-  if (searchParams.every((param) => param.length < 3)) {
+  if (searchParams.every((param) => param.length <= 3)) {
     return recipes;
   } else {
-    searchParams.splice(
-      searchParams.findIndex((param) => param.length < 3),
-      1
-    );
     for (let i = 0; i < searchParams.length; i++) {
       for (let j = 0; j < recipes.length; j++) {
         const recipeName = recipes[j].name;
